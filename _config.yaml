@@ -1,7 +1,7 @@
 theme: jekyll-theme-minimal
 
-title: Snowmass CPM Meeting Stats
-description: Some information about the CPM meeting
+title: ACAT 2021 Meeting Stats
+description: Some information about the ACAT 2021 Workshop
 
 google_analytics:
-repository: gordonwatts/snowmass-cpm-attendance
+repository: gordonwatts/acat-2021-attendance
