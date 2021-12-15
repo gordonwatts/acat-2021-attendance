@@ -14,7 +14,7 @@ def load_zoom_data(file: Path):
     # Get the raw data in
     try:
         header_info = pd.read_csv(file, nrows=1, parse_dates=['Start Time', 'End Time'])  # type: ignore
-        meeting_info = pd.read_csv(file, skiprows=2, parse_dates=['Join Time', 'Leave Time'])  # type: ignore
+        meeting_info = pd.read_csv(file, skiprows=3, parse_dates=['Join Time', 'Leave Time'])  # type: ignore
 
         # The time shift
         shift = timedelta(hours=int(header_info['TM Shift'][0]))
@@ -53,13 +53,14 @@ class ZoomMeetingData:
         self._coming_and_going.columns = ['Name', 'Join', 'Leave']
 
         # Extract the ID for the room
-        if self._topic.startswith('CPM Breakout - Zoom'):
-            self._id = 10 + int(self._topic[-2:])
-        elif self._topic.startswith('Plenary '):
-            day = self._topic.split(' ')[1]
-            self._id = list(calendar.day_name).index(day)
-        else:
-            self._id = 0
+        self._id = hash(self._topic)
+        # if self._topic.startswith('Track '):
+        #     self._id = 10 + int(self._topic[-2:])
+        # elif self._topic.startswith('Plenary'):
+        #     day = self._topic.split(' ')[1]
+        #     self._id = list(calendar.day_name).index(day)
+        # else:
+        #     self._id = 0
 
     @property
     def id(self) -> int:

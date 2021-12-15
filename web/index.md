@@ -1,6 +1,6 @@
 # Snowmass CPM Meeting Attendance
 
-This site shows some basic statistics for the Snowmass CPM meeting.
+This site shows some basic statistics for the  CPM meeting.
 
 - List of [rooms](rooms) that are included.
 

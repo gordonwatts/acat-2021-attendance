@@ -1,5 +1,5 @@
-# Snowmass CPM Statistics
+# ACAT-2021 Statistics
 
-Some data processing of zoom files from the Snowmass CPM meeting
+Some data processing of zoom files from the ACAT 2021 meeting
 
-Find these pages served on [github here](https://gordonwatts.github.io/snowmass-cpm-attendance/).
+Find these pages served on [github here](https://gordonwatts.github.io/acat-2021-attendance/).
