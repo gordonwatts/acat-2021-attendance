@@ -1,4 +1,4 @@
-# Room attendance per room
+# Room attendance by room
 
 {% include vega.html %}
 
