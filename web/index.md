@@ -1,6 +1,6 @@
-# Snowmass CPM Meeting Attendance
+# ACAT 2021 Zoom Meeting Attendance
 
-This site shows some basic statistics for the  CPM meeting.
+This site shows some basic statistics for the ACAT 2021 workshop.
 
 - List of [rooms](rooms) that are included.
 
