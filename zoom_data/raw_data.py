@@ -30,6 +30,16 @@ def load_zoom_data(file: Path):
     except Exception as e:
         raise Exception(f'Failed while opening file {str(file)}') from e
 
+_g_room_id = {
+    'Plenary - 11-29': 1,
+    'Plenary - 11-30': 2,
+    'Plenary - 12-1': 3,
+    'Plenary - 12-2': 4,
+    'Plenary - 12-3': 5,
+    'Track 1': 10,
+    'Track 2': 11,
+    'Track 3': 12,
+}
 
 class ZoomMeetingData:
     '''Raw information from a meeting, with raw list of people going
@@ -53,14 +63,7 @@ class ZoomMeetingData:
         self._coming_and_going.columns = ['Name', 'Join', 'Leave']
 
         # Extract the ID for the room
-        self._id = hash(self._topic)
-        # if self._topic.startswith('Track '):
-        #     self._id = 10 + int(self._topic[-2:])
-        # elif self._topic.startswith('Plenary'):
-        #     day = self._topic.split(' ')[1]
-        #     self._id = list(calendar.day_name).index(day)
-        # else:
-        #     self._id = 0
+        self._id = _g_room_id[self._topic]
 
     @property
     def id(self) -> int:
